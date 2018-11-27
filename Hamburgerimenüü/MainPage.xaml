@@ -1,0 +1,90 @@
+﻿<Page
+    x:Class="Hamburgerimenüü.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Hamburgerimenüü"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <RelativePanel>
+            <StackPanel Name="headblock" 
+                        Orientation="Horizontal">
+                <Button Name="backButton">
+                    <SymbolIcon Symbol="Back">
+                    </SymbolIcon>
+                </Button>
+
+                <TextBlock Name="titleblock"
+                           Text="Sample App">
+                </TextBlock>
+            </StackPanel>           
+                <Button Name="hamburgerButton" 
+                        RelativePanel.Below="headblock"
+                        Click="HamburgerButton_Click">
+                    <SymbolIcon Symbol="GlobalNavigationButton">
+                        
+                    </SymbolIcon>
+                </Button>
+        </RelativePanel>
+        <SplitView Grid.Row="1"
+                   IsPaneOpen="True"
+                   DisplayMode="CompactInline"
+                   CompactPaneLength="40"
+                   Name="splitview1">
+            <SplitView.Pane>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <ListBox>
+                        <ListBoxItem>
+                            <StackPanel Orientation="Horizontal">
+                                <SymbolIcon Symbol="Bookmarks"></SymbolIcon>
+                                <TextBlock Margin="10,0,0,0">Item 1</TextBlock>
+                            </StackPanel>
+                        </ListBoxItem>
+                        <ListBoxItem>
+                            <StackPanel Orientation="Horizontal">
+                                <SymbolIcon Symbol="Bookmarks"></SymbolIcon>
+                                <TextBlock Margin="10,0,0,0">Item 2</TextBlock>
+                            </StackPanel>
+                        </ListBoxItem>
+                        <ListBoxItem>
+                            <StackPanel Orientation="Horizontal">
+                                <SymbolIcon Symbol="Bookmarks"></SymbolIcon>
+                                <TextBlock Margin="10,0,0,0">Item 3</TextBlock>
+                            </StackPanel>
+                        </ListBoxItem>
+                        <ListBoxItem>
+                            <StackPanel Orientation="Horizontal">
+                                <SymbolIcon Symbol="Bookmarks"></SymbolIcon>
+                                <TextBlock Margin="10,0,0,0">Item 4</TextBlock>
+                                <ListBox>
+                                    <ListBoxItem>
+                                        <StackPanel Orientation="Horizontal">
+                                            <SymbolIcon Symbol="Setting"></SymbolIcon>
+                                            <TextBlock Margin="10,0,0,0">Settings</TextBlock>
+                                            
+                                        </StackPanel>
+                                        
+                                    </ListBoxItem>
+                                    
+                                </ListBox>
+                            </StackPanel>
+                        </ListBoxItem>
+                    </ListBox>
+                </Grid>
+            </SplitView.Pane>
+            
+        </SplitView>
+    </Grid>
+</Page>
